@@ -2048,6 +2048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 658937519}
+  collectState: 0
 --- !u!114 &336425439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2061,6 +2062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 658937519}
+  collectState: 0
 --- !u!65 &336425446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4226,12 +4228,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658937519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dc6768536dd138439fff8ad331f5eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
+--- !u!114 &658937525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658937519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0520d5aa31ee6a44bd3a0a48f11c18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  open: 0
+  plate1: {fileID: 336425439}
+  plate2: {fileID: 336425438}
 --- !u!1001 &672223672
 PrefabInstance:
   m_ObjectHideFlags: 0
