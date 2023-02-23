@@ -30,7 +30,7 @@ public class Tripwire : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        leftSpikes.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-        rightSpikes.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        //leftSpikes.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        //rightSpikes.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
     }
 }
