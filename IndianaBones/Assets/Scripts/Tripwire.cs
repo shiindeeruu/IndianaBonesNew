@@ -18,6 +18,7 @@ public class Tripwire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        leftSpikes.SetActive(true);
         rightClosedPosition = rightSpikes.transform.position;
         rightOpenedPosition = new Vector3(rightClosedPosition.x + 2.354f, rightClosedPosition.y, rightClosedPosition.z);
         leftClosedPosition = leftSpikes.transform.position;
@@ -57,13 +58,15 @@ public class Tripwire : MonoBehaviour
         {
             rightSpikes.transform.position = rightClosedPosition;
             leftSpikes.transform.position = leftClosedPosition;
-            Debug.Log("Moved backward\n");
+            leftSpikes.SetActive(false);
+            rightSpikes.SetActive(false);
         }
         if (other != null)
         {
             rightSpikes.transform.position = rightClosedPosition;
             leftSpikes.transform.position = leftClosedPosition;
-            Debug.Log("Moved backward\n");
+            rightSpikes.SetActive(false);
+            leftSpikes.SetActive(false);
         }
 
     }
