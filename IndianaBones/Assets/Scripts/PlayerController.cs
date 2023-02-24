@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject deathTextObject;
+    public GameObject trophyTextObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathTextObject.SetActive(false);
+        trophyTextObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,10 +39,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Spike")
+        if (other.gameObject.CompareTag("Spike"))
         {
             deathTextObject.SetActive(true);
             transform.position = new Vector3(-0.019f, 0.403f, 6.067f);
+
+        }
+
+        if (other.gameObject.CompareTag("Trophy"))
+        {
+            trophyTextObject.SetActive(true);
+        }
+    }
+
+    private void onTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("Spike"))
+        {
+            deathTextObject.SetActive(false);
 
         }
     }

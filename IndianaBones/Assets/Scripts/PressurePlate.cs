@@ -7,6 +7,11 @@ public class PressurePlate : MonoBehaviour
     public SlideDoor door;
     public int collectState = 0;
 
+    [SerializeField]
+    private AudioClip clickOn;
+    [SerializeField]
+    private AudioClip clickOff;
+
     private int collectGoal = 2;
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +26,7 @@ public class PressurePlate : MonoBehaviour
             collectState += 1;
             Debug.Log(collectState);
         }
+        AudioSource.PlayClipAtPoint(clickOn, transform.position);
     }
 
     private void Update()
@@ -52,5 +58,6 @@ public class PressurePlate : MonoBehaviour
         {
             door.open = false;
         }
+        AudioSource.PlayClipAtPoint(clickOff, transform.position);
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - PressurePlate
   - Key2
   - Key1
+  - Trophy
   layers:
   - Default
   - TransparentFX
