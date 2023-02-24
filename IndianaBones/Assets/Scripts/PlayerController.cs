@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Spike"))
         {
+            Debug.Log("sent back\n");
             deathTextObject.SetActive(true);
-            transform.position = new Vector3(-0.019f, 0.403f, 6.067f);
+            transform.position = new Vector3(-0.019f, 1.173f, 3.226f);
 
         }
 
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void onTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.CompareTag("Spike"))
         {

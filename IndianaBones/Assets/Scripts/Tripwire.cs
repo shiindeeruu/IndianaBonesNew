@@ -19,9 +19,13 @@ public class Tripwire : MonoBehaviour
     void Start()
     {
         rightClosedPosition = rightSpikes.transform.position;
-        rightOpenedPosition = new Vector3(rightClosedPosition.x - 1.254f, rightClosedPosition.y, rightClosedPosition.z);
+        rightOpenedPosition = new Vector3(rightClosedPosition.x + 2.354f, rightClosedPosition.y, rightClosedPosition.z);
         leftClosedPosition = leftSpikes.transform.position;
-        leftOpenedPosition = new Vector3(leftClosedPosition.x + 1.982f, leftClosedPosition.y, leftClosedPosition.z);
+        leftOpenedPosition = new Vector3(leftClosedPosition.x - 2.354f, leftClosedPosition.y, leftClosedPosition.z);
+        Debug.Log("rightOpenedPosition:" + rightOpenedPosition.ToString() + "\n");
+        Debug.Log("leftOpenedPosition:" + leftOpenedPosition.ToString() + "\n");
+        Debug.Log("rightClosedPosition:" + rightClosedPosition.ToString() + "\n");
+        Debug.Log("leftClosedPosition:" + leftClosedPosition.ToString() + "\n");
 
     }
 
@@ -33,20 +37,34 @@ public class Tripwire : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Bone"))
         {
             rightSpikes.transform.position = rightOpenedPosition;
             leftSpikes.transform.position = leftOpenedPosition;
+            Debug.Log("Moved forward\n");
+        }
+        if (other != null)
+        {
+            rightSpikes.transform.position = rightOpenedPosition;
+            leftSpikes.transform.position = leftOpenedPosition;
+            Debug.Log("Moved forward\n");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Bone"))
         {
             rightSpikes.transform.position = rightClosedPosition;
             leftSpikes.transform.position = leftClosedPosition;
+            Debug.Log("Moved backward\n");
         }
-            
+        if (other != null)
+        {
+            rightSpikes.transform.position = rightClosedPosition;
+            leftSpikes.transform.position = leftClosedPosition;
+            Debug.Log("Moved backward\n");
+        }
+
     }
 }
